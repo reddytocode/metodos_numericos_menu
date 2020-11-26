@@ -20,12 +20,15 @@
 
 import tkinter as tk
 from tablas import tabla_de_diferencias_finitas
+from tablas import Euler
 
-
-def metodo_secante():
+def diferencias_finitas():
     print("Correr tabla_de_diferencias_finitas")
     tabla_de_diferencias_finitas()
 
+def euler():
+    print("Euler")
+    Euler()
 
 root = tk.Tk()
 frame = tk.Frame(root)
@@ -38,7 +41,12 @@ button = tk.Button(frame,
 button.pack(side=tk.LEFT)
 slogan = tk.Button(frame,
                    text="tabla_de_diferencias_finitas",
-                   command=metodo_secante)
+                   command=diferencias_finitas)
+                   
+slogan.pack(side=tk.LEFT)
+slogan = tk.Button(frame,
+                   text="Euler",
+                   command=euler)
 slogan.pack(side=tk.LEFT)
 
 root.mainloop()

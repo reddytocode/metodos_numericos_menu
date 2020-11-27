@@ -1,52 +1,60 @@
-# def punto_fals():
-#     print("punto falso")
-
-
-# def secante():
-#     print("secante")
-
-
-# opciones = [
-#     (0, "Punto Falso", punto_fals),
-#     (1, "Secante", secante)]
-
-# print("Ingrese una opción")
-# for opcion in opciones:
-#     print("{}: {}, ingrese si para correr".format(opcion[0], opcion[1]))
-#     correr = input()
-#     if(correr == "si"):
-#         opcion[2]()
-
-
 import tkinter as tk
-from tablas import tabla_de_diferencias_finitas
-from tablas import Euler
+from euler import metodo_euler
+from tabla_de_diferencias_finitas import metodo_tabla_de_diferencias_finitas
 
-def diferencias_finitas():
-    print("Correr tabla_de_diferencias_finitas")
-    tabla_de_diferencias_finitas()
+metodo_tabla_de_diferencias_finitas_button = None
 
-def euler():
-    print("Euler")
-    Euler()
 
 root = tk.Tk()
-frame = tk.Frame(root)
-frame.pack()
+# root.geometry("320x512")
+# frame = tk.Frame(root)
+# frame.pack()
 
-button = tk.Button(frame,
-                   text="QUIT",
+lab = tk.Label(root, text="Cargando ... ", bg="red", height=320, width=512)
+boton_already_clicked = False
+
+
+def call_function(function):
+    global boton_already_clicked
+    if(boton_already_clicked == False):
+        boton_already_clicked = True
+        buttons = [metodo_tabla_de_diferencias_finitas_button,
+                   metodo_euler_button]
+        lab.place(relx=0.5,
+                  rely=0.5,
+                  anchor='center')
+        for butt in buttons:
+            butt.place_forget()
+        function()
+        place_buttons()
+        lab.place_forget()
+        print("Proceso terminado")
+        lab.place_forget()
+        boton_already_clicked = False
+    else:
+        pass
+
+
+def place_buttons():
+    metodo_tabla_de_diferencias_finitas_button.place(x=10, y=10)
+    metodo_euler_button.place(x=10, y=40)
+
+
+metodo_tabla_de_diferencias_finitas_button = tk.Button(root,
+                                                       text="Tabla  de_diferencias_finitas",
+                                                       command=lambda: call_function(metodo_tabla_de_diferencias_finitas))
+
+
+metodo_euler_button = tk.Button(root,
+                                text="Euler",
+                                command=lambda: call_function(metodo_euler))
+
+place_buttons()
+button = tk.Button(root,
+                   text="Salir",
                    fg="red",
                    command=quit)
-button.pack(side=tk.LEFT)
-slogan = tk.Button(frame,
-                   text="tabla_de_diferencias_finitas",
-                   command=diferencias_finitas)
-                   
-slogan.pack(side=tk.LEFT)
-slogan = tk.Button(frame,
-                   text="Euler",
-                   command=euler)
-slogan.pack(side=tk.LEFT)
+button.place(x=10, y=60)
+
 
 root.mainloop()

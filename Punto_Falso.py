@@ -1,4 +1,3 @@
-##import matplotlib.pyplot as plt  # importando libreria para graficar
 expresion_f = None
 
 def metodo_punto_falso():

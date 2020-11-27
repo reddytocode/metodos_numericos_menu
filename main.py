@@ -22,7 +22,7 @@ def call_function(function):
         buttons = [metodo_tabla_de_diferencias_finitas_button,
                    metodo_euler_button,
                    metodo_newton_raphson_button,
-                   metodo_punto_falso]
+                   metodo_punto_falso_button]
         lab.place(relx=0.5,
                   rely=0.5,
                   anchor='center')

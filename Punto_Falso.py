@@ -1,16 +1,16 @@
-expresion_f = None
+expresion_f_x = None
 
 def metodo_punto_falso():
-    global expresion_f
+    global expresion_f_x
 
     import numpy as np  # math con superopoderers
     import numexpr as ne
 
-    expresion_f = input("Ingrese f(x), ej: (4*x**2-2*x-1) >> ")
+    expresion_f_x = input("Ingrese f(x), ej: (4*x**2-2*x-1) >> ")
     
     def f(x):
-        global expresion_f
-        return ne.evaluate(expresion_f)
+        global expresion_f_x
+        return ne.evaluate(expresion_f_x)
         #f = lambda x: 4*x**2-2*x-1
         #np.power(np.e,x) - np.tan(x)
         #np.sin(x) + np.log(x)

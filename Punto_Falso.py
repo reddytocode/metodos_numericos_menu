@@ -37,4 +37,4 @@ def metodo_punto_falso():
 
     
     print(res)
-metodo_punto_falso()
+#metodo_punto_falso()

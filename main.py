@@ -46,6 +46,7 @@ metodo_tabla_de_diferencias_finitas_button = tk.Button(root,
 
 
 metodo_euler_button = tk.Button(root,
+                                fg="blue",
                                 text="Euler",
                                 command=lambda: call_function(metodo_euler))
 
@@ -54,7 +55,7 @@ button = tk.Button(root,
                    text="Salir",
                    fg="red",
                    command=quit)
-button.place(x=10, y=60)
+button.place(x=10, y=70)
 
 
 root.mainloop()

@@ -3,6 +3,7 @@ from euler import metodo_euler
 from tabla_de_diferencias_finitas import metodo_tabla_de_diferencias_finitas
 from newton_raphson import metodo_newton_raphson
 from punto_falso import metodo_punto_falso
+from biseccion import metodo_biseccion
 
 metodo_tabla_de_diferencias_finitas_button = None
 
@@ -22,7 +23,8 @@ def call_function(function):
         buttons = [metodo_tabla_de_diferencias_finitas_button,
                    metodo_euler_button,
                    metodo_newton_raphson_button,
-                   metodo_punto_falso_button]
+                   metodo_punto_falso_button,
+                   metodo_biseccion_button]
         lab.place(relx=0.5,
                   rely=0.5,
                   anchor='center')
@@ -43,14 +45,20 @@ def call_function(function):
 
 def place_buttons():
     metodo_tabla_de_diferencias_finitas_button.place(x=10, y=10)
-    metodo_punto_falso_button.place(x=10, y=40)
-    metodo_euler_button.place(x=10, y=70)
-    metodo_newton_raphson_button.place(x=10, y=100)
+    metodo_biseccion_button.place(x=10, y=40)
+    metodo_punto_falso_button.place(x=10, y=70)
+    metodo_euler_button.place(x=10, y=100)
+    metodo_newton_raphson_button.place(x=10, y=130)
 
 metodo_tabla_de_diferencias_finitas_button = tk.Button(root,
                                                        fg="blue",
                                                        text="Tabla  de_diferencias_finitas",
                                                        command=lambda: call_function(metodo_tabla_de_diferencias_finitas))
+
+metodo_biseccion_button = tk.Button(root,
+                                     fg="blue",
+                                     text="Biseccion",
+                                     command=lambda: call_function(metodo_biseccion))
 
 metodo_punto_falso_button = tk.Button(root,
                                      fg="blue",
@@ -72,7 +80,7 @@ button = tk.Button(root,
                    text="Salir",
                    fg="red",
                    command=quit)
-button.place(x=10, y=130)
+button.place(x=10, y=160)
 
 
 root.mainloop()

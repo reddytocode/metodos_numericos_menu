@@ -34,9 +34,8 @@ def metodo_punto_falso():
             break
           i = i + 1
         return x
-        res = punto_falso(f, 0.2, 1.2)
+    res = punto_falso(f, 0.2, 1.2)
 
     
     print(res)
-
-  #metodo_punto_falso()
+metodo_punto_falso()

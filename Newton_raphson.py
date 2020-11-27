@@ -16,7 +16,7 @@ def metodo_newton_raphson():
     def f(x):
         global expresion_f_x
         return ne.evaluate(expresion_f_x)
-        # return x**3 - 5*x+1
+    # return x**3 - 5*x+1
     #np.log(x)- x + 2
     # x-2*np.cos(x)
     #x*np.power(np.e,x) - 2

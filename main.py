@@ -4,6 +4,7 @@ from tabla_de_diferencias_finitas import metodo_tabla_de_diferencias_finitas
 from newton_raphson import metodo_newton_raphson
 from punto_falso import metodo_punto_falso
 from biseccion import metodo_biseccion
+from secante import metodo_secante
 
 metodo_tabla_de_diferencias_finitas_button = None
 
@@ -12,7 +13,7 @@ root = tk.Tk()
 # root.geometry("320x512")
 # frame = tk.Frame(root)
 # frame.pack()
-lab = tk.Label(root, text="Cargando ... ", bg="red", height=320, width=512)
+lab = tk.Label(root, text="Cargando ... ", bg="red", height=820, width=512)
 boton_already_clicked = False
 
 
@@ -24,7 +25,8 @@ def call_function(function):
                    metodo_euler_button,
                    metodo_newton_raphson_button,
                    metodo_punto_falso_button,
-                   metodo_biseccion_button]
+                   metodo_biseccion_button,
+                   metodo_secante_button]
         lab.place(relx=0.5,
                   rely=0.5,
                   anchor='center')
@@ -47,8 +49,9 @@ def place_buttons():
     metodo_tabla_de_diferencias_finitas_button.place(x=10, y=10)
     metodo_biseccion_button.place(x=10, y=40)
     metodo_punto_falso_button.place(x=10, y=70)
-    metodo_euler_button.place(x=10, y=100)
-    metodo_newton_raphson_button.place(x=10, y=130)
+    metodo_secante_button.place(x=10, y=100)
+    metodo_euler_button.place(x=10, y=130)
+    metodo_newton_raphson_button.place(x=10, y=160)
 
 metodo_tabla_de_diferencias_finitas_button = tk.Button(root,
                                                        fg="blue",
@@ -64,6 +67,10 @@ metodo_punto_falso_button = tk.Button(root,
                                      fg="blue",
                                      text="Punto Falso",
                                      command=lambda: call_function(metodo_punto_falso))
+metodo_secante_button = tk.Button(root,
+                                     fg="blue",
+                                     text="Secante",
+                                     command=lambda: call_function(metodo_secante))
 
 metodo_euler_button = tk.Button(root,
                                 fg="blue",
@@ -80,7 +87,7 @@ button = tk.Button(root,
                    text="Salir",
                    fg="red",
                    command=quit)
-button.place(x=10, y=160)
+button.place(x=10, y=190)
 
 
 root.mainloop()

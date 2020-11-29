@@ -13,6 +13,7 @@ from diferencias_divididas import metodo_diferencias_divididas
 from simpsom import metodo_simpsom
 from taylor import metodo_taylor
 from euler_modificado import metodo_euler_modificado
+from runge_kutta_segundo import metodo_runge_kutta_segundo
 
 metodo_tabla_de_diferencias_finitas_button = None
 
@@ -42,7 +43,8 @@ def call_function(function):
                    metodo_diferencias_divididas_button,
                    metodo_simpsom_button,
                    metodo_taylor_button,
-                   metodo_euler_modificado_button]
+                   metodo_euler_modificado_button,
+                   metodo_runge_kutta_segundo_button]
         lab.place(relx=1.5,
                   rely=1.5,
                   anchor='center')
@@ -76,6 +78,7 @@ def place_buttons():
     metodo_simpsom_button.place(x=10, y=340)
     metodo_taylor_button.place(x=10, y=370)
     metodo_euler_modificado_button.place(x=10, y=400)
+    metodo_runge_kutta_segundo_button.place(x=10, y=430)
 
 metodo_tabla_de_diferencias_finitas_button = tk.Button(root,
                                                        fg="blue",
@@ -145,12 +148,17 @@ metodo_euler_modificado_button = tk.Button(root,
                                          fg="blue",
                                          text="Euler Modificado",
                                          command=lambda: call_function(metodo_euler_modificado))
+
+metodo_runge_kutta_segundo_button = tk.Button(root,
+                                         fg="blue",
+                                         text="Runge Kutta",
+                                         command=lambda: call_function(metodo_runge_kutta_segundo))
 place_buttons()
 button = tk.Button(root,
                    text="Salir",
                    fg="red",
                    command=quit)
-button.place(x=10, y=430)
+button.place(x=10, y=460)
 
 
 root.mainloop()

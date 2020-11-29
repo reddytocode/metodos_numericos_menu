@@ -16,6 +16,7 @@ from euler_modificado import metodo_euler_modificado
 from runge_kutta_segundo import metodo_runge_kutta_segundo
 from ec_dif_explicito_parabolico import metodo_ec_dif_explicito_parabolico
 from trapezoidal import metodo_trapezoidal
+from regrecion_lineal import metodo_regrecion_lineal
 
 metodo_tabla_de_diferencias_finitas_button = None
 
@@ -48,7 +49,8 @@ def call_function(function):
                    metodo_euler_modificado_button,
                    metodo_runge_kutta_segundo_button,
                    metodo_ec_dif_explicito_parabolico_button,
-                   metodo_trapezoidal_button]
+                   metodo_trapezoidal_button,
+                   metodo_regrecion_lineal_button]
         lab.place(relx=1.5,
                   rely=1.5,
                   anchor='center')
@@ -85,6 +87,7 @@ def place_buttons():
     metodo_runge_kutta_segundo_button.place(x=10, y=430)
     metodo_ec_dif_explicito_parabolico_button.place(x=10, y=460)
     metodo_trapezoidal_button.place(x=10, y=490)
+    metodo_regrecion_lineal_button.place(x=10, y=520)
 
 metodo_tabla_de_diferencias_finitas_button = tk.Button(root,
                                                        fg="blue",
@@ -170,12 +173,17 @@ metodo_trapezoidal_button = tk.Button(root,
                                          text="Trapezoidal",
                                          command=lambda: call_function(metodo_trapezoidal))
 
+metodo_regrecion_lineal_button = tk.Button(root,
+                                         fg="blue",
+                                         text="Regrecion_Lineal",
+                                         command=lambda: call_function(metodo_regrecion_lineal))
+
 place_buttons()
 button = tk.Button(root,
                    text="Salir",
                    fg="red",
                    command=quit)
-button.place(x=10, y=520)
+button.place(x=10, y=550)
 
 
 root.mainloop()

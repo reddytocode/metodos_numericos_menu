@@ -1,7 +1,7 @@
 expresion_f_x = None
 
 
-def metodo_taylor():
+def metodo_euler_modificado():
     global expresion_f_x
     import scipy
     import numpy as np
@@ -25,16 +25,26 @@ def metodo_taylor():
     xf = float(input("Introduzca xf (ej; 3): "))
     y0 = float(input("Introduzca n (ej; 5): "))
 
+    #def dydx(x, y):
+        #return np.power(x,2)- (np.power(y,3)/5)
+
+    #n = 100000
+    #x0 = 1
+    #xf = 3
+    #y0 = 5
+
     x=[x0]
     y = [y0]
 
     h = (xf - x0)/n
 
     for i in range(n):
-        y0 = y0 + h*(dydx(x0,y0))+((h**2)/2)*dydx(x0,y0)
+        yp = y0 + h*dydx(x0,y0)
+        y0 = y0 + h*((dydx(x0,y0)+dydx(x0,yp))/2)
+        
         y.append(y0)
         x0 = x0 + h
         x.append(x0)
     ##print(x)
     print(y[-1])
-#metodo_taylor()
+#metodo_euler_modificado()

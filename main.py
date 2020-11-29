@@ -5,6 +5,7 @@ from newton_raphson import metodo_newton_raphson
 from punto_falso import metodo_punto_falso
 from biseccion import metodo_biseccion
 from secante import metodo_secante
+from punto_fijo import metodo_punto_fijo
 
 metodo_tabla_de_diferencias_finitas_button = None
 
@@ -26,7 +27,8 @@ def call_function(function):
                    metodo_newton_raphson_button,
                    metodo_punto_falso_button,
                    metodo_biseccion_button,
-                   metodo_secante_button]
+                   metodo_secante_button,
+                   metodo_punto_fijo_button]
         lab.place(relx=0.5,
                   rely=0.5,
                   anchor='center')
@@ -52,6 +54,7 @@ def place_buttons():
     metodo_secante_button.place(x=10, y=100)
     metodo_euler_button.place(x=10, y=130)
     metodo_newton_raphson_button.place(x=10, y=160)
+    metodo_punto_fijo_button.place(x=10, y=190)
 
 metodo_tabla_de_diferencias_finitas_button = tk.Button(root,
                                                        fg="blue",
@@ -62,6 +65,11 @@ metodo_biseccion_button = tk.Button(root,
                                      fg="blue",
                                      text="Biseccion",
                                      command=lambda: call_function(metodo_biseccion))
+
+metodo_punto_fijo_button = tk.Button(root,
+                                     fg="blue",
+                                     text="Punto Fijo",
+                                     command=lambda: call_function(metodo_punto_fijo))
 
 metodo_punto_falso_button = tk.Button(root,
                                      fg="blue",
@@ -87,7 +95,7 @@ button = tk.Button(root,
                    text="Salir",
                    fg="red",
                    command=quit)
-button.place(x=10, y=190)
+button.place(x=10, y=220)
 
 
 root.mainloop()

@@ -1,16 +1,30 @@
 expresion_fx = None
+##expresion_gx = None
 
 def metodo_punto_fijo():
     # Algoritmo de punto fijo
     # [a,b] intervalo de búsqueda
     # error = tolera
     global expresion_fx
+    #global expresion_gx
+    
     import numpy as np
+    import numexpr as ne
 
     # INGRESO
     #fx = lambda x: np.exp(-x) - x
     gx = lambda x: np.exp(-x)
 
+
+ 
+
+    expresion_fx = input("Ingrese f(x), ej: (exp(x) - x) >> ")
+##    expresion_gx = input("Ingrese g(x), ej: (exp(-x)) >> ")
+    
+##    a = float(input("a, ej: 0 >> "))
+##    b = float(input("b, ej: 1 >> "))
+##    tolera =float(input("tolera, ej: 0.001 >> "))
+##    iteramax =float(input("iteramax, ej: 15 >> "))
     a = 0       # intervalo
     b = 1
     tolera = 0.001
@@ -18,18 +32,17 @@ def metodo_punto_fijo():
     muestras = 51  # gráfico
 
     tramos = 51
-
-    expresion_fx = input("Ingrese f(x), ej: (exp(x) - x) >> ")
-    a = float(input("a, ej: 0 >> "))
-    #p = float(input("m, ej: 1.2 >> "))
         
-    def f(x):
+    def fx(x):
         global expresion_fx
         return ne.evaluate(expresion_fx)
+##    def g(x):
+##        global expresion_gx
+##        return ne.evaluate(expresion_gx)
 
 
 
-    def puntofijo(gx,a,tolera, iteramax = 15):
+    def puntofijo(gx,a,tolera, iteramax ):
         i = 1 # iteración
         b = gx(a)
         tramo = abs(b-a)
@@ -53,4 +66,5 @@ def metodo_punto_fijo():
 
     # SALIDA
     print(respuesta)
-metodo_punto_fijo()
+    
+#metodo_punto_fijo()

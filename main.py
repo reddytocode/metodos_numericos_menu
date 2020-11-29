@@ -9,6 +9,7 @@ from punto_fijo import metodo_punto_fijo
 from maller import metodo_maller
 from polinomio import metodo_polinomio
 from lagrange import metodo_lagrange
+from diferencias_divididas import metodo_diferencias_divididas
 
 metodo_tabla_de_diferencias_finitas_button = None
 
@@ -34,7 +35,8 @@ def call_function(function):
                    metodo_punto_fijo_button,
                    metodo_maller_button,
                    metodo_polinomio_button,
-                   metodo_lagrange_button]
+                   metodo_lagrange_button,
+                   metodo_diferencias_divididas_button]
         lab.place(relx=1.5,
                   rely=1.5,
                   anchor='center')
@@ -64,6 +66,7 @@ def place_buttons():
     metodo_maller_button.place(x=10, y=220)
     metodo_polinomio_button.place(x=10, y=250)
     metodo_lagrange_button.place(x=10, y=280)
+    metodo_diferencias_divididas_button.place(x=10, y=310)
 
 metodo_tabla_de_diferencias_finitas_button = tk.Button(root,
                                                        fg="blue",
@@ -114,12 +117,17 @@ metodo_lagrange_button = tk.Button(root,
                                          text="Lagrange",
                                          command=lambda: call_function(metodo_lagrange))
 
+metodo_diferencias_divididas_button = tk.Button(root,
+                                         fg="blue",
+                                         text="Diferencias Divididas",
+                                         command=lambda: call_function(metodo_diferencias_divididas))
+
 place_buttons()
 button = tk.Button(root,
                    text="Salir",
                    fg="red",
                    command=quit)
-button.place(x=10, y=310)
+button.place(x=10, y=340)
 
 
 root.mainloop()

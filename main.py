@@ -14,6 +14,8 @@ from simpsom import metodo_simpsom
 from taylor import metodo_taylor
 from euler_modificado import metodo_euler_modificado
 from runge_kutta_segundo import metodo_runge_kutta_segundo
+from ec_dif_explicito_parabolico import metodo_ec_dif_explicito_parabolico
+from trapezoidal import metodo_trapezoidal
 
 metodo_tabla_de_diferencias_finitas_button = None
 
@@ -44,7 +46,9 @@ def call_function(function):
                    metodo_simpsom_button,
                    metodo_taylor_button,
                    metodo_euler_modificado_button,
-                   metodo_runge_kutta_segundo_button]
+                   metodo_runge_kutta_segundo_button,
+                   metodo_ec_dif_explicito_parabolico_button,
+                   metodo_trapezoidal_button]
         lab.place(relx=1.5,
                   rely=1.5,
                   anchor='center')
@@ -79,6 +83,8 @@ def place_buttons():
     metodo_taylor_button.place(x=10, y=370)
     metodo_euler_modificado_button.place(x=10, y=400)
     metodo_runge_kutta_segundo_button.place(x=10, y=430)
+    metodo_ec_dif_explicito_parabolico_button.place(x=10, y=460)
+    metodo_trapezoidal_button.place(x=10, y=490)
 
 metodo_tabla_de_diferencias_finitas_button = tk.Button(root,
                                                        fg="blue",
@@ -153,12 +159,23 @@ metodo_runge_kutta_segundo_button = tk.Button(root,
                                          fg="blue",
                                          text="Runge Kutta",
                                          command=lambda: call_function(metodo_runge_kutta_segundo))
+
+metodo_ec_dif_explicito_parabolico_button = tk.Button(root,
+                                         fg="blue",
+                                         text="Ec Dif Explicito Parabolico",
+                                         command=lambda: call_function(metodo_ec_dif_explicito_parabolico))
+
+metodo_trapezoidal_button = tk.Button(root,
+                                         fg="blue",
+                                         text="Trapezoidal",
+                                         command=lambda: call_function(metodo_trapezoidal))
+
 place_buttons()
 button = tk.Button(root,
                    text="Salir",
                    fg="red",
                    command=quit)
-button.place(x=10, y=460)
+button.place(x=10, y=520)
 
 
 root.mainloop()

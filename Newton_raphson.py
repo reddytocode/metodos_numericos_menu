@@ -31,8 +31,8 @@ def metodo_newton_raphson():
     # np.power(np.e,x)+x*np.power(np.e,x)
     #3*x**2 - 4*x + 5
 
-    x0 = 1
-    tolera = 0.001
+    x0 = float(input("Introduzca x0 (ej 1): "))
+    tolera = float(input("Introduzca x0 (ej 0.001): "))
 
     tabla = []
     tramo = abs(2*tolera)

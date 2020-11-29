@@ -8,6 +8,7 @@ from secante import metodo_secante
 from punto_fijo import metodo_punto_fijo
 from maller import metodo_maller
 from polinomio import metodo_polinomio
+from lagrange import metodo_lagrange
 
 metodo_tabla_de_diferencias_finitas_button = None
 
@@ -32,7 +33,8 @@ def call_function(function):
                    metodo_secante_button,
                    metodo_punto_fijo_button,
                    metodo_maller_button,
-                   metodo_polinomio_button]
+                   metodo_polinomio_button,
+                   metodo_lagrange_button]
         lab.place(relx=1.5,
                   rely=1.5,
                   anchor='center')
@@ -61,6 +63,7 @@ def place_buttons():
     metodo_punto_fijo_button.place(x=10, y=190)
     metodo_maller_button.place(x=10, y=220)
     metodo_polinomio_button.place(x=10, y=250)
+    metodo_lagrange_button.place(x=10, y=280)
 
 metodo_tabla_de_diferencias_finitas_button = tk.Button(root,
                                                        fg="blue",
@@ -106,12 +109,17 @@ metodo_polinomio_button = tk.Button(root,
                                          text="Polinomio",
                                          command=lambda: call_function(metodo_polinomio))
 
+metodo_lagrange_button = tk.Button(root,
+                                         fg="blue",
+                                         text="Lagrange",
+                                         command=lambda: call_function(metodo_lagrange))
+
 place_buttons()
 button = tk.Button(root,
                    text="Salir",
                    fg="red",
                    command=quit)
-button.place(x=10, y=280)
+button.place(x=10, y=310)
 
 
 root.mainloop()

@@ -1,4 +1,4 @@
-def metodo_polinomial():
+def metodo_polinomio():
     import numpy as np
     import matplotlib.pyplot as plt
     # INGRESO, Datos de prueba
@@ -50,5 +50,5 @@ def metodo_polinomial():
     plt.plot(x,y,'ro')
     plt.plot(xteo,yteo,'b-')
     plt.show()
-metodo_polinomial()
+#metodo_polinomial()
    

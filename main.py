@@ -7,6 +7,7 @@ from biseccion import metodo_biseccion
 from secante import metodo_secante
 from punto_fijo import metodo_punto_fijo
 from maller import metodo_maller
+from polinomio import metodo_polinomio
 
 metodo_tabla_de_diferencias_finitas_button = None
 
@@ -30,7 +31,8 @@ def call_function(function):
                    metodo_biseccion_button,
                    metodo_secante_button,
                    metodo_punto_fijo_button,
-                   metodo_maller_button]
+                   metodo_maller_button,
+                   metodo_polinomio_button]
         lab.place(relx=1.5,
                   rely=1.5,
                   anchor='center')
@@ -58,6 +60,7 @@ def place_buttons():
     metodo_newton_raphson_button.place(x=10, y=160)
     metodo_punto_fijo_button.place(x=10, y=190)
     metodo_maller_button.place(x=10, y=220)
+    metodo_polinomio_button.place(x=10, y=250)
 
 metodo_tabla_de_diferencias_finitas_button = tk.Button(root,
                                                        fg="blue",
@@ -98,12 +101,17 @@ metodo_maller_button = tk.Button(root,
                                          text="Maller",
                                          command=lambda: call_function(metodo_maller))
 
+metodo_polinomio_button = tk.Button(root,
+                                         fg="blue",
+                                         text="Polinomio",
+                                         command=lambda: call_function(metodo_polinomio))
+
 place_buttons()
 button = tk.Button(root,
                    text="Salir",
                    fg="red",
                    command=quit)
-button.place(x=10, y=250)
+button.place(x=10, y=280)
 
 
 root.mainloop()

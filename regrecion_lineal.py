@@ -4,25 +4,26 @@ def metodo_regrecion_lineal():
     import matplotlib.pyplot as plt
     
     x2_aux = []
-    fi_aux = []
+    x6_aux = []
     n_1 = 0
+    n = int(input("Cantidad de n >> "))
     while(True):
         try:
-            n_1 = int(input("Cantidad de n >> "))
+            n_1 = int(input("Cantidad de n_1 >> "))
             break
         except Exception as e:
             pass
+    for _ in range (n):
+        for _ in range(n_1):
+            aux = float(input("x_{} >> ".format(_)))
+            x2_aux.append(aux)
 
-    for _ in range(n_1):
-        aux = float(input("x_{} >> ".format(_)))
-        x2_aux.append(aux)
+    #for _ in range(n_1):
+     #   aux = float(input("f_{} >> ".format(_)))
+      #  x6_aux.append(aux)
 
-    for _ in range(n_1):
-        aux = float(input("f_{} >> ".format(_)))
-        fi_aux.append(aux)
-
-    x2 = np.array(x2_aux)
-    fi = np.array(fi_aux)
+    n= np.array[x2_aux]
+    #x6 = np.array[x6_aux]
     #horarios
     # x5 = [2,2,2,2,5,2,2,2,3,3,2,3,3,2.2,2,10,2,2,2]
     #promedio
@@ -30,18 +31,18 @@ def metodo_regrecion_lineal():
     #recreo
     x6 = [10,10,5,7,20,20,10,15,10,10,10,10,20,6,17,5,10,20,10]
     #edad
-    x1 = [19,19,20,19,22,19,20,23,19,19,19,29,26,19,20,22,19,22,20]
+    #x1 = [19,19,20,19,22,19,20,23,19,19,19,29,26,19,20,22,19,22,20]
 
     #peso corporal
-    x3 = [69,90,61,68,74,85,65,60,60,76,59,74,62,71,48,59,62,59,60]
+    #x3 = [69,90,61,68,74,85,65,60,60,76,59,74,62,71,48,59,62,59,60]
 
     #estatura
-    x4 = [1.71,1.79,1.68,1.70,1.60,1.75,1.70,1.58,1.63,1.70,1.56,1.70,1.60,1.71,1.50,1.70,1.69,1.77,1.70]
+    #x4 = [1.71,1.79,1.68,1.70,1.60,1.75,1.70,1.58,1.63,1.70,1.56,1.70,1.60,1.71,1.50,1.70,1.69,1.77,1.70]
     #unos
-    x7 = [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
+    #x7 = [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
 
     matrices =[x6]
-    matriz =[x7,x4,x3,x2,x1]
+    matriz =[n]
     def trasponer(m):
 
         t = []
@@ -119,4 +120,4 @@ def metodo_regrecion_lineal():
             for elemento in fila:
                 print(elemento, end="    ")
             print("]")
-#regrecion_lineal()
+#metodo_regrecion_lineal()
